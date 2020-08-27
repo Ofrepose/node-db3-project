@@ -5,6 +5,7 @@ const Schemes = require('./scheme-model.js');
 const router = express.Router();
 
 router.get('/', (req, res) => {
+  console.log('inside router')
   Schemes.find()
   .then(schemes => {
     res.json(schemes);
@@ -47,6 +48,7 @@ router.get('/:id/steps', (req, res) => {
 });
 
 router.post('/', (req, res) => {
+  console.log('here')
   const schemeData = req.body;
 
   Schemes.add(schemeData)
